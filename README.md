@@ -17,7 +17,7 @@ sg-f1bae299
 
 ## Connection Medium
 Use "anywhere" inbound rule to start.
-
+::/0 needs to be added to default security group at startup (adding into CFT)
 
 
 
