@@ -13,10 +13,14 @@ sg-f1bae299
 ## Userdata information
 
 ```
+sudo useradd [username1]
+sudo passwd [username2]
+modified /etc/sshd_config and allowed authentication 3 lines above password search
 ```
 
 ## Connection Medium
 Use "anywhere" inbound rule to start.
+currently allowed in allaccess sg, need to create cft to do that
 ::/0 needs to be added to default security group at startup (adding into CFT)
 
 
