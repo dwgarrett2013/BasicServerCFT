@@ -1,0 +1,53 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "asglatestasg": {
+      "Type": "AWS::AutoScaling::AutoScalingGroup",
+      "Properties": {
+        "AvailabilityZones": [
+          "us-east-2a",
+          "us-east-2b",
+          "us-east-2c"
+        ],
+        "Cooldown": "300",
+        "DesiredCapacity": "1",
+        "HealthCheckGracePeriod": "300",
+        "HealthCheckType": "EC2",
+        "MaxSize": "1",
+        "MinSize": "1",
+        "VPCZoneIdentifier": [
+          "subnet-a6aadceb",
+          "subnet-8b7f8ce3",
+          "subnet-02dee879"
+        ],
+        "LaunchConfigurationName": {
+          "Ref": "lclatestlc"
+        },
+        "TerminationPolicies": [
+          "Default"
+        ]
+      }
+    },
+    "lclatestlc": {
+      "Type": "AWS::AutoScaling::LaunchConfiguration",
+      "Properties": {
+        "ImageId": "ami-15e9c770",
+        "InstanceType": "t2.micro",
+        "KeyName": "sampleDavid",
+        "SecurityGroups": [
+          "sg-645b780c"
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/xvda",
+            "Ebs": {
+              "SnapshotId": "snap-0feaf6bb4c7fecac9",
+              "VolumeSize": 8
+            }
+          }
+        ]
+      }
+    }
+  },
+  "Description": "mytemplate"
+}
