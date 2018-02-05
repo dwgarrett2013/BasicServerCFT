@@ -35,7 +35,7 @@
         "InstanceType": "t2.micro",
         "KeyName": "sampleDavid",
         "SecurityGroups": [
-          "sg-645b780c"
+          "sg-65934d0e"
         ],
         "BlockDeviceMappings": [
           {
