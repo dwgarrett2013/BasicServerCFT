@@ -1,6 +1,28 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Resources": {
+    "samplelb": {
+      "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
+      "Properties": {
+          "LoadBalancerName" : "samplelb",
+          "Listeners" : [
+             {
+                  "InstancePort" : "8080",
+                  "InstanceProtocol" : "HTTP",
+                  "LoadBalancerPort" : "8080",
+                  "Protocol" : "HTTP"
+            }
+          ],
+          "SecurityGroups": [
+              "sg-65934d0e"
+          ],
+          "Subnets" : [
+              "subnet-a6aadceb",
+              "subnet-8b7f8ce3",
+              "subnet-02dee879"
+          ]
+      }
+    },
     "asglatestasg": {
       "Type": "AWS::AutoScaling::AutoScalingGroup",
       "Properties": {
@@ -23,8 +45,8 @@
         "LaunchConfigurationName": {
           "Ref": "lclatestlc"
         },
-        "TerminationPolicies": [
-          "Default"
+        "LoadBalancerNames": [
+          "samplelb"
         ]
       }
     },
