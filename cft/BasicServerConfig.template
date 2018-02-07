@@ -8,13 +8,13 @@
           "Listeners" : [
              {
                   "InstancePort" : "22",
-                  "InstanceProtocol" : "SSH",
+                  "InstanceProtocol" : "TCP",
                   "LoadBalancerPort" : "22",
-                  "Protocol" : "SSH"
+                  "Protocol" : "TCP"
             }
           ],
           "SecurityGroups": [
-              "sg-65934d0e"
+              "sg-912ef4fa"
           ],
           "Subnets" : [
               "subnet-a6aadceb",
@@ -57,7 +57,7 @@
         "InstanceType": "t2.micro",
         "KeyName": "sampleDavid",
         "SecurityGroups": [
-          "sg-65934d0e"
+          "sg-912ef4fa"
         ],
         "BlockDeviceMappings": [
           {
@@ -71,5 +71,5 @@
       }
     }
   },
-  "Description": "mytemplate"
+  "Description": "BasicServerConfig"
 }
