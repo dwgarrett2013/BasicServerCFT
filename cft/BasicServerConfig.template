@@ -7,10 +7,10 @@
           "LoadBalancerName" : "samplelb",
           "Listeners" : [
              {
-                  "InstancePort" : "8080",
-                  "InstanceProtocol" : "HTTP",
-                  "LoadBalancerPort" : "8080",
-                  "Protocol" : "HTTP"
+                  "InstancePort" : "22",
+                  "InstanceProtocol" : "SSH",
+                  "LoadBalancerPort" : "22",
+                  "Protocol" : "SSH"
             }
           ],
           "SecurityGroups": [
