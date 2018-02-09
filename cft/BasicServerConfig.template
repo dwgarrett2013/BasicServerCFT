@@ -59,6 +59,11 @@
         "SecurityGroups": [
           "sg-912ef4fa"
         ],
+        "UserData": "
+          yum update -y;
+          curl https://s3.us-east-2.amazonaws.com/thebuck/node_userdata.sh --output ./node_userdata.sh;
+          bash node_userdata.sh;
+        ",
         "BlockDeviceMappings": [
           {
             "DeviceName": "/dev/xvda",
